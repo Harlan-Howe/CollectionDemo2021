@@ -172,6 +172,7 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                         intSpinner.setValue(1);
                     else
                         intSpinner.setValue(0);
+                    break;
                 case 16: //ArrayList indexOf
                     intSpinner.setValue(mainPanel.ALIndexOf(hex));
             }
