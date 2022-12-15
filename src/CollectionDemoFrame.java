@@ -117,7 +117,7 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
         exceptionLabel.setText("");
         int num = (Integer)(intSpinner.getValue());
         HexItem hex = myHexPanel.getMyItem();
-
+        int n;
         try // because we might throw an exception doing this....
         {
             switch (which)
@@ -129,7 +129,7 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     mainPanel.ArraySetHexAtIndex(hex,num);
                     break;
                 case 2: //Array getNumHexes
-                    int n = mainPanel.ArrayGetNumHexes();
+                    n = mainPanel.ArrayGetNumHexes();
                     intSpinner.setValue(n);
                     JOptionPane.showMessageDialog(this, "Method returned "+n, "Array - getNumHexes",
                             JOptionPane.INFORMATION_MESSAGE);
@@ -156,7 +156,7 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     mainPanel.ALSetHexAtIndex(hex,num);
                     break;
                 case 10: //ArrayList get numHexes
-                    int n = mainPanel.ALGetNumHexes();
+                    n = mainPanel.ALGetNumHexes();
                     intSpinner.setValue(n);
                     JOptionPane.showMessageDialog(this,"Method returned "+n,
                             "AL - GetNumHexes",JOptionPane.INFORMATION_MESSAGE);
@@ -174,16 +174,8 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     mainPanel.ALRemoveHexAtLocation(num);
                     break;
                 case 15: //ArrayList contains
-                    if (mainPanel.ALContains(hex))
-                    {
-                        //intSpinner.setValue(1);
-                        JOptionPane.showMessageDialog(this, "True", "AL - Contains", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                    else
-                    {
-                       // intSpinner.setValue(0);
-                        JOptionPane.showMessageDialog(this, "True", "AL - Contains", JOptionPane.INFORMATION_MESSAGE);
-                    }
+                    JOptionPane.showMessageDialog(this, mainPanel.ALContains(hex), "AL - Contains", JOptionPane.INFORMATION_MESSAGE);
+
                     break;
                 case 16: //ArrayList indexOf
                 {
