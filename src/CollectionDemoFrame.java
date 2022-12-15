@@ -129,7 +129,10 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     mainPanel.ArraySetHexAtIndex(hex,num);
                     break;
                 case 2: //Array getNumHexes
-                    intSpinner.setValue(mainPanel.ArrayGetNumHexes());
+                    int n = mainPanel.ArrayGetNumHexes();
+                    intSpinner.setValue(n);
+                    JOptionPane.showMessageDialog(this, "Method returned "+n, "Array - getNumHexes",
+                            JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 3: //Array removeAllHexes
                     mainPanel.ArrayRemoveAllHexes();
@@ -156,7 +159,7 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     int n = mainPanel.ALGetNumHexes();
                     intSpinner.setValue(n);
                     JOptionPane.showMessageDialog(this,"Method returned "+n,
-                            "GetNumHexes",JOptionPane.INFORMATION_MESSAGE);
+                            "AL - GetNumHexes",JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 11: //ArrayList removeAllHexes
                     mainPanel.ALRemoveAllHexes();
@@ -174,12 +177,12 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     if (mainPanel.ALContains(hex))
                     {
                         //intSpinner.setValue(1);
-                        JOptionPane.showMessageDialog(this, "True", "Contains", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "True", "AL - Contains", JOptionPane.INFORMATION_MESSAGE);
                     }
                     else
                     {
                        // intSpinner.setValue(0);
-                        JOptionPane.showMessageDialog(this, "True", "Contains", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "True", "AL - Contains", JOptionPane.INFORMATION_MESSAGE);
                     }
                     break;
                 case 16: //ArrayList indexOf
@@ -187,7 +190,7 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     int idx = mainPanel.ALIndexOf(hex);
                     intSpinner.setValue(idx);
                     JOptionPane.showMessageDialog(this, "Method returned " + idx,
-                            "Index Of", JOptionPane.INFORMATION_MESSAGE);
+                            "AL - Index Of", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
             // since the above method calls might have changed what
