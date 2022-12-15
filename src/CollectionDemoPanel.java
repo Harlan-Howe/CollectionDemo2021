@@ -24,6 +24,7 @@ public class CollectionDemoPanel extends JPanel
         // ============================================= ARRAY
         g.setFont(titleFont);
         g.drawString("Array",20,50);
+        int w = g.getFontMetrics().stringWidth("null");
 
         int numSpacesInArray = 25;
         // ---------- draw the numbers
@@ -40,7 +41,6 @@ public class CollectionDemoPanel extends JPanel
                 arrayOfHexes[i].drawSelfAt(20+30*i, 100, g);
             else
             {
-                int w = g.getFontMetrics().stringWidth("null");
                 g.drawString("null",20+30*i - w/2, 105);
             }
         }
@@ -60,7 +60,8 @@ public class CollectionDemoPanel extends JPanel
         // ----------- draw the Hexes
         for (int i=0; i<numItemsInArrayList; i++)
         {
-            // TODO #2: draw the hexItem at index i at location (20+30*(i%25), 200+50 *(i/25)).
+            // TODO #2: draw the hexItem at index i at location (20+30*(i%25), 200+50*(i/25)) if it is non-null. If it
+            //           _is_ null, write the word "null" at (20+30*(i%25) - w/2, 200+50*(i / 25))
             // hint: borrow heavily from the corresponding section above,
             //       initially line 40.
         }
