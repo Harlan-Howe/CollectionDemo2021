@@ -187,6 +187,7 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
             // instead of crashing, put the exception at the bottom of
             // the screen...
             exceptionLabel.setText(exp.toString());
+            JOptionPane.showMessageDialog(this,exp.toString(),"Error Returned",JOptionPane.WARNING_MESSAGE);
         }
 
     }
