@@ -153,7 +153,10 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     mainPanel.ALSetHexAtIndex(hex,num);
                     break;
                 case 10: //ArrayList get numHexes
-                    intSpinner.setValue(mainPanel.ALGetNumHexes());
+                    int n = mainPanel.ALGetNumHexes();
+                    intSpinner.setValue(n);
+                    JOptionPane.showMessageDialog(this,"Method returned "+n,
+                            "GetNumHexes",JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 11: //ArrayList removeAllHexes
                     mainPanel.ALRemoveAllHexes();
@@ -169,12 +172,23 @@ public class CollectionDemoFrame extends JFrame implements ActionListener
                     break;
                 case 15: //ArrayList contains
                     if (mainPanel.ALContains(hex))
-                        intSpinner.setValue(1);
+                    {
+                        //intSpinner.setValue(1);
+                        JOptionPane.showMessageDialog(this, "True", "Contains", JOptionPane.INFORMATION_MESSAGE);
+                    }
                     else
-                        intSpinner.setValue(0);
+                    {
+                       // intSpinner.setValue(0);
+                        JOptionPane.showMessageDialog(this, "True", "Contains", JOptionPane.INFORMATION_MESSAGE);
+                    }
                     break;
                 case 16: //ArrayList indexOf
-                    intSpinner.setValue(mainPanel.ALIndexOf(hex));
+                {
+                    int idx = mainPanel.ALIndexOf(hex);
+                    intSpinner.setValue(idx);
+                    JOptionPane.showMessageDialog(this, "Method returned " + idx,
+                            "Index Of", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
             // since the above method calls might have changed what
             //   should have appeared on the screen, tell the main
