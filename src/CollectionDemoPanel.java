@@ -48,7 +48,9 @@ public class CollectionDemoPanel extends JPanel
         g.setFont(titleFont);
         g.drawString("ArrayList",20,150);
 
-        int numItemsInArrayList = 0; //TODO #1: fix this.
+        //TODO #1: fix the next line so that it actually asks the array how many spaces it has. (Yes, this should be
+        // 25, but actually ask for it from the arrayOfHexes.
+        int numItemsInArrayList = 0;
         // ----------- draw the numbers
         for (int i=0; i<numItemsInArrayList; i++)
         {
